@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Advice generator app</title>
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+<body>
+  
+  <section class="card">
+    <h1 class="advice-id" id="id"></h1>
+    <p class="advice-body" id="advice" ></p>
+      <svg width="295" height="16" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#4F5D74" d="M0 8h122v1H0zM173 8h122v1H173z"/><g transform="translate(138)" fill="#CEE3E9"><rect width="6" height="16" rx="3"/><rect x="14" width="6" height="16" rx="3"/></g></g></svg>
+   
+     <div class="dice-circle" id="Btn">
+      <img src="../images/icon-dice.svg" alt="">
+    </div>
+  </section> 
+   
+
+
+
+  
+  <div class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Abdeslam Lahjouji</a>.
+  </div>
+
+  <script src="script.js"></script>
+  <script> 
+   fetch("https://api.adviceslip.com/advice")
+      .then((response) => response.json())
+      .then((data) => {
+        const adviceId = document.getElementById("id")
+        const adviceEl = document.getElementById("advice");
+        adviceEl.innerHTML = "‟" + data.slip.advice + "”";
+        adviceId.innerHTML = "advice #" + data.slip.id + ".";
+      });
+  document.getElementById("Btn").addEventListener("click", function() {
+    location.reload();
+});</script>
+</body>
+</html>

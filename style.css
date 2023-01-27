@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
+:root {
+	--Light-Cyan: hsl(193, 38%, 86%);
+	--Neon-Green: hsl(150, 100%, 66%);
+	--Grayish-Blue: hsl(217, 19%, 38%);
+	--Dark-Grayish-Blue: hsl(217, 19%, 24%);
+	--Dark-Blue: hsl(218, 23%, 16%);
+}
+html {
+	background-color: var(--Dark-Blue);
+}
+* {
+	font-family: "Manrope";
+	font-size: 24px;
+	padding: 0;
+	margin: 0;
+}
+
+section {
+	font-weight: 800;
+	position: relative;
+	height: 330px;
+	width: 330px;
+	border-radius: 10px;
+	margin: auto;
+	background-color: var(--Dark-Grayish-Blue);
+	text-align: center;
+	padding: 10px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-transform: capitalize;
+}
+
+.advice-id {
+	text-transform: uppercase;
+	font-size: 16px;
+	color: var(--Neon-Green);
+	letter-spacing: 0.1cm;
+	margin: 12px auto;
+}
+.advice-body {
+	color: var(--Light-Cyan);
+	margin: 10% auto;
+}
+
+.dice-circle {
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	background: var(--Neon-Green);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.dice-circle img {
+	height: 40px;
+	width: 40px;
+	cursor: pointer;
+}
+.dice-circle:hover {
+	box-shadow: 0px 0px 75px 0px var(--Neon-Green);
+}
+
+.attribution {
+	text-align: center;
+	font-size: 16px;
+	color: var(--Light-Cyan);
+}
+.attribution a {
+	color: var(--Neon-Green);
+	font-size: 16px;
+	text-decoration: none;
+	text-transform: capitalize;
+}
+
+.attribution:hover a {
+	color: var(--Light-Cyan);
+}
+.attribution:hover {
+	color: var(--Neon-Green);
+}
+
+svg {
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+@media (min-width: 775px) {
+	section {
+		width: 50%;
+		height: 300px;
+	}
+	.attribution,
+	.attribution a {
+		font-size: 25px;
+	}
+}
